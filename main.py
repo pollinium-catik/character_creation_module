@@ -2,6 +2,7 @@ from random import randint
 
 
 def attack(char_name: str, char_class: str) -> str:
+    """Атака противника."""
     if char_class == 'warrior':
         return (f'{char_name}'
                 f' нанёс урон противнику равный'
@@ -18,6 +19,7 @@ def attack(char_name: str, char_class: str) -> str:
 
 
 def defence(char_name: str, char_class: str) -> str:
+    """Блокирование атаки."""
     if char_class == 'warrior':
         return (f'{char_name}'
                 f' блокировал'
@@ -34,6 +36,7 @@ def defence(char_name: str, char_class: str) -> str:
 
 
 def special(char_name: str, char_class: str) -> str:
+    """Использование суперсилы."""
     if char_class == 'warrior':
         return (f'{char_name}'
                 f' применил специальное умение «Выносливость'
@@ -50,6 +53,7 @@ def special(char_name: str, char_class: str) -> str:
 
 
 def start_training(char_name: str, char_class: str) -> str:
+    """Начало тренировки."""
     if char_class == 'warrior':
         print(f'{char_name},'
               f' ты Воитель — отличный боец ближнего боя.')
@@ -79,6 +83,7 @@ def start_training(char_name: str, char_class: str) -> str:
 
 
 def choice_char_class() -> str:
+    """Выбор класса персонажа."""
     approve_choice: str = ''
     char_class: str = ''
     while approve_choice != 'y':
@@ -100,12 +105,13 @@ def choice_char_class() -> str:
     return char_class
 
 
-def main():
+if __name__ == '__main__':
+    run_screensaver()
     print('Приветствую тебя, искатель приключений!')
     print('Прежде чем начать игру...')
     char_name: str = input('...назови себя: ')
-    print(f'Здравствуй, {char_name}!'
-          f' Сейчас твоя выносливость — 80, атака — 5 и защита — 10.')
+    print(f'Здравствуй, {char_name}! '
+          'Сейчас твоя выносливость — 80, атака — 5 и защита — 10.')
     print('Ты можешь выбрать один из трёх путей силы:')
     print('Воитель, Маг, Лекарь')
     char_class: str = choice_char_class()
